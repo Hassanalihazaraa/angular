@@ -6,6 +6,7 @@ describe('FriendFormComponent', () => {
   let component: FriendFormComponent;
   let fixture: ComponentFixture<FriendFormComponent>;
 
+  // @ts-ignore
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ FriendFormComponent ]
