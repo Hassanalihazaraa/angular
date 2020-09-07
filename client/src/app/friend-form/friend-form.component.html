@@ -4,39 +4,43 @@
   <div class="col-md-6">
     <label for="validationCustom01" class="form-label">First name</label>
     <input type="text" class="form-control" placeholder="Ex: John" aria-label="First name" id="validationCustom01"
-           name="firstname"
-           [(ngModel)]="friendModel.firstName" required>
-    <div class="valid-feedback">
+           name="firstName"
+           [(ngModel)]="friendModel.firstName" #firstName="ngModel" required>
+    <div [hidden]="firstName.invalid" class="valid-feedback">
       Please enter your Firstname!
     </div>
   </div>
   <div class="col-md-6">
     <label for="validationCustom02" class="form-label">Last name</label>
     <input type="text" class="form-control" placeholder="Ex: Doe" aria-label="Last name" id="validationCustom02"
-           [(ngModel)]="friendModel.lastName" name="lastname" required>
-    <div class="valid-feedback">
+           [(ngModel)]="friendModel.lastName" name="lastName" #lastName="ngModel" required>
+    <div [hidden]="lastName.invalid" class="valid-feedback">
       Please enter your Lastname!
     </div>
   </div>
   <div class="col-md-6">
     <label for="exampleFormControlInput1" class="form-label" id="exampleFormControlInput1">Email address</label>
     <input type="email" class="form-control" id="inputEmail4" aria-label="email" placeholder="name@example.com"
-           name="email" [(ngModel)]="friendModel.email">
-    <div class="invalid-feedback">
+           name="email" [(ngModel)]="friendModel.email" #email="ngModel">
+    <div [hidden]="email.invalid" class="invalid-feedback">
       Please enter your email address.
     </div>
   </div>
   <div class="col-md-6">
     <label for="validationCustom02" class="form-label">Phone number</label>
-    <input type="text" class="form-control" placeholder="Phone number" aria-label="Phone number" name="phone number"
-           [(ngModel)]="friendModel.phone">
+    <input type="text" class="form-control" placeholder="+32xxxxxxx" aria-label="Phone number" name="phone"
+           [(ngModel)]="friendModel.phone" #number="ngModel">
+    <div [hidden]="number.invalid" class="invalid-feedback">
+      Please enter your phone number.
+    </div>
   </div>
   <div class="col-md-6">
     <label for="validationCustom04" class="form-label">Language</label>
-    <select class="form-select" id="validationCustom04" name="languages" [(ngModel)]="friendModel.languages" required>
+    <select class="form-select" id="validationCustom04" name="languages" [(ngModel)]="friendModel.language"
+            #language="ngModel" required>
       <option *ngFor="let language of languages">{{language}}</option>
     </select>
-    <div class="invalid-feedback">
+    <div [hidden]="language.invalid" class="invalid-feedback">
       Please select a valid option.
     </div>
   </div>
