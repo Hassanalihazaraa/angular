@@ -20,7 +20,8 @@
   <div class="col-md-6">
     <label for="exampleFormControlInput1" class="form-label" id="exampleFormControlInput1">Email address</label>
     <input type="email" class="form-control" id="email" aria-label="email" placeholder="name@example.com"
-           name="email" [(ngModel)]="friendModel.email" #email="ngModel" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" required>
+           name="email" [(ngModel)]="friendModel.email" #email="ngModel" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+           required>
     <div *ngIf="email.invalid && email.touched" class="alert alert-danger">
       Please provide a valid email address.
     </div>
@@ -45,6 +46,6 @@
     </div>
   </div>
   <div class="col-12">
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary" [disabled]="friendsForm.invalid">Submit</button>
   </div>
 </form>
