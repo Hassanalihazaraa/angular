@@ -9,13 +9,13 @@ import {Friends} from "../friends";
 })
 export class FriendFormComponent implements OnInit {
   languages = ['HTML', 'CSS', 'Javascript', 'PHP', 'Java', 'Python'];
-
   friendModel = new Friends('', '', '', '', '');
+  submitted = false;
 
-  constructor() {
+  onSubmit() {
+    this.submitted = true
   }
 
   ngOnInit(): void {
   }
-
 }
