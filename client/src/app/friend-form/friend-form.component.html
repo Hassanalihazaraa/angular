@@ -1,46 +1,46 @@
 {{friendModel | json}}
 
-<form class="row g-3 needs-validation" #friendsForm="ngForm">
+<form method="post" class="row g-3 needs-validation" #friendsForm="ngForm" novalidate>
   <div class="col-md-6">
     <label for="validationCustom01" class="form-label">First name</label>
     <input type="text" class="form-control" placeholder="Ex: John" aria-label="First name" id="validationCustom01"
-           name="firstName"
-           [(ngModel)]="friendModel.firstName" #firstName="ngModel" required>
-    <div [hidden]="firstName.invalid" class="valid-feedback">
-      Please enter your Firstname!
+           name="firstName" [(ngModel)]="friendModel.firstName" #firstName="ngModel" pattern="^([^0-9]*)$" required>
+    <div *ngIf="firstName.invalid && firstName.touched" class="alert alert-danger">
+      Please provide a valid Firstname
     </div>
   </div>
   <div class="col-md-6">
     <label for="validationCustom02" class="form-label">Last name</label>
     <input type="text" class="form-control" placeholder="Ex: Doe" aria-label="Last name" id="validationCustom02"
-           [(ngModel)]="friendModel.lastName" name="lastName" #lastName="ngModel" required>
-    <div [hidden]="lastName.invalid" class="valid-feedback">
-      Please enter your Lastname!
+           [(ngModel)]="friendModel.lastName" name="lastName" #lastName="ngModel" pattern="^([^0-9]*)$" required>
+    <div *ngIf="lastName.invalid && lastName.touched" class="alert alert-danger">
+      Please provide a valid Lastname
     </div>
   </div>
   <div class="col-md-6">
     <label for="exampleFormControlInput1" class="form-label" id="exampleFormControlInput1">Email address</label>
-    <input type="email" class="form-control" id="inputEmail4" aria-label="email" placeholder="name@example.com"
-           name="email" [(ngModel)]="friendModel.email" #email="ngModel">
-    <div [hidden]="email.invalid" class="invalid-feedback">
-      Please enter your email address.
+    <input type="email" class="form-control" id="email" aria-label="email" placeholder="name@example.com"
+           name="email" [(ngModel)]="friendModel.email" #email="ngModel" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" required>
+    <div *ngIf="email.invalid && email.touched" class="alert alert-danger">
+      Please provide a valid email address.
     </div>
   </div>
   <div class="col-md-6">
     <label for="validationCustom02" class="form-label">Phone number</label>
-    <input type="text" class="form-control" placeholder="+32xxxxxxx" aria-label="Phone number" name="phone"
-           [(ngModel)]="friendModel.phone" #number="ngModel">
-    <div [hidden]="number.invalid" class="invalid-feedback">
-      Please enter your phone number.
+    <input type="text" class="form-control" placeholder="+32xxxxxxx" aria-label="Phone number" name="number"
+           [(ngModel)]="friendModel.phone" #number="ngModel" pattern="^[0-9*+#]*$" required>
+    <div *ngIf="number.invalid && number.touched" class="alert alert-danger">
+      Please provide a valid phone number.
     </div>
   </div>
   <div class="col-md-6">
     <label for="validationCustom04" class="form-label">Language</label>
     <select class="form-select" id="validationCustom04" name="languages" [(ngModel)]="friendModel.language"
             #language="ngModel" required>
+      <option value="" selected disabled>Choose a language</option>
       <option *ngFor="let language of languages">{{language}}</option>
     </select>
-    <div [hidden]="language.invalid" class="invalid-feedback">
+    <div *ngIf="language.invalid && language.touched" class="alert alert-danger">
       Please select a valid option.
     </div>
   </div>
