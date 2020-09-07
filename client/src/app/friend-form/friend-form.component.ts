@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
 import {Friends} from "../friends";
+import {AddFriendService} from "../add-friend.service";
 
 @Component({
   selector: 'app-friend-form',
@@ -10,10 +11,15 @@ import {Friends} from "../friends";
 export class FriendFormComponent implements OnInit {
   languages = ['HTML', 'CSS', 'Javascript', 'PHP', 'Java', 'Python'];
   friendModel = new Friends('', '', '', '', '');
-  submitted = false;
 
-  onSubmit() {
-    this.submitted = true
+  constructor(private addFriendService: AddFriendService) {
+  }
+
+  addFriend() {
+    this.addFriendService.addFriend(this.friendModel).subscribe((data: Friends) => {
+      // @ts-ignore
+      console.log(data);
+    })
   }
 
   ngOnInit(): void {

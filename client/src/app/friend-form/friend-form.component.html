@@ -1,6 +1,6 @@
 {{friendModel | json}}
 
-<form method="post" (ngSubmit)="onSubmit()" class="row g-3 needs-validation" #friendsForm="ngForm" novalidate>
+<form method="post" (ngSubmit)="addFriend()" class="row g-3 needs-validation" #friendsForm="ngForm" novalidate>
   <div class="col-md-6">
     <label for="validationCustom01" class="form-label">First name</label>
     <input type="text" class="form-control" placeholder="Ex: John" aria-label="First name" id="validationCustom01"
