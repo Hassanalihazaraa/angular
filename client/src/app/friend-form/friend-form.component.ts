@@ -9,8 +9,8 @@ import {AddFriendService} from "../add-friend.service";
   styleUrls: ['./friend-form.component.scss']
 })
 export class FriendFormComponent implements OnInit {
-  public allFriends: string;
-  public url = "http://localhost:9001/allFriends";
+  readonly url = "http://localhost:9001/allFriends";
+  public allFriends = this.addFriendService.getFriends(this.url);
   languages = ['HTML', 'CSS', 'Javascript', 'PHP', 'Java', 'Python'];
   friendModel = new Friends('', '', '', '', '');
 
@@ -18,24 +18,10 @@ export class FriendFormComponent implements OnInit {
   }
 
   addFriend() {
-    this.addFriendService.addFriend(this.friendModel).subscribe((data: Friends) => {
-      // @ts-ignore
-      console.log(data);
-    })
+    this.addFriendService.addFriend(this.friendModel).subscribe((data: Friends) => console.log(data, this.allFriends));
   }
 
-  public async function(url: string): Promise<any> {
-    const response = await fetch(url, {
-      method: 'get',
-      headers: new Headers({
-        'Content-type': 'application/json'
-      })
-    });
-    const data = await response.json();
-    this.allFriends = data;
-    return data;
-  }
-
-  ngOnInit(): void {
+  ngOnInit(): any {
+    console.log(this.allFriends);
   }
 }

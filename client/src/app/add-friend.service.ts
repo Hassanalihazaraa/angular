@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Friends} from "./friends";
 
 @Injectable({
@@ -15,7 +15,13 @@ export class AddFriendService {
     return this.http.post(this.url, friend)
   }
 
-  getFriend() {
-    return this.http.get(this.url)
+  public async getFriends(url: string): Promise<any> {
+    const options = {
+      method: 'get',
+      headers: new HttpHeaders({
+        'Content-type': 'application/json'
+      })
+    };
+    return this.http.get(url, options);
   }
 }
