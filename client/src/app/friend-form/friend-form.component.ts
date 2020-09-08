@@ -32,7 +32,11 @@ export class FriendFormComponent implements OnInit {
         'Content-type': 'application/json'
       })
     };
-    return await this.addFriendService.getFriends(url, options).toPromise()
+    return await this.addFriendService.getFriends(url, options)
+      .toPromise()
+      .then(res => {
+        this.allFriends = res
+      })
   }
 
   ngOnInit(): any {
