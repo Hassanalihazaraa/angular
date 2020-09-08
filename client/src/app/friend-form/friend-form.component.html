@@ -55,7 +55,7 @@
 <section class="mt-5 d-flex justify-content-center" *ngFor="let friend of allFriends">
   <div class="card" style="width: 18rem;">
     <div class="card-body">
-      <h5 class="card-title">{{friend.firstName}} {{friend.lastName}}</h5>
+      <h5 class="card-title">{{friend.firstName | titlecase}} {{friend.lastName | titlecase}}</h5>
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">Email: {{friend.email}}</li>
