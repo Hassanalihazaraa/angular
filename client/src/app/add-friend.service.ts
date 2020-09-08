@@ -6,11 +6,16 @@ import {Friends} from "./friends";
   providedIn: 'root'
 })
 export class AddFriendService {
-  url = "http://localhost:9001/addFriend";
+  readonly url = "http://localhost:9001/addFriend";
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   addFriend(friend: Friends) {
     return this.http.post(this.url, friend)
+  }
+
+  getFriend() {
+    return this.http.get(this.url)
   }
 }
