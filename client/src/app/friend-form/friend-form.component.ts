@@ -12,7 +12,7 @@ export class FriendFormComponent implements OnInit {
   languages = ['HTML', 'CSS', 'Javascript', 'PHP', 'Java', 'Python'];
   friendModel = new Friends('', '', '', '', '');
 
-  constructor(private addFriendService: AddFriendService) {
+  constructor(public addFriendService: AddFriendService) {
   }
 
   addFriend() {

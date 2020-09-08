@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 
-const PORT = 9000;
+const PORT = 9001;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -16,11 +16,10 @@ app.all("/*", function (req, res, next) {
 
 
 let allFriends = [{
-    fName: 'Coach',
-    lName: 'Tim',
+    firstName: 'Coach',
+    lastName: 'Tim',
     email: 'tim.broos@becode.org',
     phone: '0469420666',
-    signatureMove: 'Yeet',
     language: 'Javascript'
 }];
 
@@ -43,7 +42,6 @@ app.post('/addFriend', function (request, response) {
     allFriends.push(request.body);
     response.status(200).send({"message": "Friend created"});
 });
-
 
 app.listen(PORT, function () {
 });
