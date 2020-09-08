@@ -10,9 +10,9 @@ import {HttpHeaders} from "@angular/common/http";
   styleUrls: ['./friend-form.component.scss']
 })
 export class FriendFormComponent implements OnInit {
-  readonly url = "http://localhost:9001/allFriends";
+  public readonly url: string = "http://localhost:9001/allFriends";
   public allFriends: any = [];
-  languages = ['HTML', 'CSS', 'Javascript', 'PHP', 'Java', 'Python'];
+  languages: Array<any> = ['HTML', 'CSS', 'Javascript', 'PHP', 'Java', 'Python'];
   friendModel = new Friends('', '', '', '', '');
 
   constructor(public addFriendService: AddFriendService) {
@@ -20,7 +20,6 @@ export class FriendFormComponent implements OnInit {
 
   public addFriend() {
     this.addFriendService.addFriend(this.friendModel).subscribe((res: Friends) =>
-      //this.allFriends = res
       this.getFriends(this.url)
     );
   }

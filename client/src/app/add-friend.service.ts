@@ -6,7 +6,7 @@ import {Friends} from "./friends";
   providedIn: 'root'
 })
 export class AddFriendService {
-  readonly url = "http://localhost:9001/addFriend";
+  public readonly url: string = "http://localhost:9001/addFriend";
 
   constructor(private http: HttpClient) {
   }
