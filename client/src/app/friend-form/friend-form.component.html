@@ -1,8 +1,7 @@
-{{friendModel | json}}
-
 <section>
+  <h1>Please enter your details</h1>
   <form method="post" (ngSubmit)="addFriend()" class="row g-3 needs-validation" #friendsForm="ngForm" novalidate>
-    <div class="col-md-6">
+    <div class="col-md-4">
       <label for="validationCustom01" class="form-label">First name</label>
       <input type="text" class="form-control" placeholder="Ex: John" aria-label="First name"
              id="validationCustom01"
@@ -15,7 +14,7 @@
         Please provide a valid Firstname
       </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-4">
       <label for="validationCustom02" class="form-label">Last name</label>
       <input type="text" class="form-control" placeholder="Ex: Doe" aria-label="Last name"
              id="validationCustom02"
@@ -28,7 +27,7 @@
         Please provide a valid Lastname
       </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-4">
       <label for="exampleFormControlInput1" class="form-label" id="exampleFormControlInput1">Email address</label>
       <input type="email" class="form-control" id="email" aria-label="email" placeholder="name@example.com"
              name="email"
@@ -40,7 +39,7 @@
         Please provide a valid email address.
       </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-4">
       <label for="validationCustom02" class="form-label">Phone number</label>
       <input type="text" class="form-control" placeholder="+32xxxxxxx" aria-label="Phone number"
              name="number"
@@ -52,7 +51,7 @@
         Please provide a valid phone number.
       </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-4">
       <label for="validationCustom04" class="form-label">Language</label>
       <select class="form-select" id="validationCustom04" name="languages"
               [(ngModel)]="friendModel.language"
@@ -65,8 +64,8 @@
         Please select a valid option.
       </div>
     </div>
-    <div class="col-12">
-      <button type="submit" class="btn btn-primary" [disabled]="friendsForm.invalid">Submit</button>
+    <div class="col-md-4">
+      <button type="submit" class="btn btn-primary" [disabled]="friendsForm.invalid">Add Friend</button>
     </div>
   </form>
 </section>

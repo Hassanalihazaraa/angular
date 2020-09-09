@@ -1,0 +1,19 @@
+h1{
+  text-align: center;
+  margin-top: 3rem;
+  color: cadetblue;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
