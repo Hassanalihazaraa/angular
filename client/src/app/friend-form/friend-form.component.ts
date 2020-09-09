@@ -10,7 +10,7 @@ import {HttpHeaders} from "@angular/common/http";
   styleUrls: ['./friend-form.component.scss']
 })
 export class FriendFormComponent implements OnInit {
-  public readonly url: string = "http://localhost:9001/allFriends";
+  public readonly url: string = "http://localhost:9000/allFriends";
   public allFriends: any = [];
   languages: Array<any> = ['HTML', 'CSS', 'Javascript', 'PHP', 'Java', 'Python'];
   friendModel = new Friends('', '', '', '', '');
