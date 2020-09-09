@@ -19,7 +19,7 @@ export class FriendFormComponent implements OnInit {
   }
 
   public addFriend() {
-    this.addFriendService.addFriend(this.friendModel).subscribe((res: Friends) =>
+    this.addFriendService.addFriend(this.friendModel).subscribe(() =>
       this.getFriends(this.url)
     );
   }
@@ -38,6 +38,6 @@ export class FriendFormComponent implements OnInit {
   }
 
   ngOnInit(): any {
-    console.log(this.getFriends(this.url));
+    this.getFriends(this.url).then(res => this.allFriends = res);
   }
 }
