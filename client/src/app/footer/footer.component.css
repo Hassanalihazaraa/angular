@@ -1,3 +1,13 @@
-
+.footer {
+  background: antiquewhite;
+  height: 6rem;
+  text-align: center;
+}
+.footer p {
+  padding-top: 2rem;
+}
+.footer p a {
+  text-decoration: none;
+}
 
 /*# sourceMappingURL=footer.component.css.map */
