@@ -1,0 +1,23 @@
+.container {
+  width: 100%;
+  margin: 5rem auto;
+  color: #dddddd;
+}
+.container h1 {
+  color: cadetblue;
+}
+.container div.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .card {
+  background: cadetblue;
+  margin-top: 2rem;
+}
+.container .card li {
+  background: antiquewhite;
+  color: cadetblue;
+}
+
+/*# sourceMappingURL=friend-details.component.css.map */

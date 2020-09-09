@@ -1,0 +1,26 @@
+.container {
+  width: 100%;
+  margin: 5rem auto;
+  color: #dddddd;
+
+  h1 {
+    color: cadetblue;
+  }
+
+  div.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+
+  .card {
+    background: cadetblue;
+    margin-top: 2rem;
+
+    li {
+      background: antiquewhite;
+      color: cadetblue;
+    }
+  }
+}

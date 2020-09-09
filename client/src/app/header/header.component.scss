@@ -2,6 +2,12 @@ header {
   width: 100%;
   background: cadetblue;
 
+  .navbar-brand {
+    color: #f2f2f2;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+
   .nav a {
     float: left;
     color: #f2f2f2;

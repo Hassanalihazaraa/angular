@@ -1,5 +1,5 @@
-<section>
-  <h1>Please enter your details</h1>
+<section class="form">
+  <h1>Please enter your friend's details</h1>
   <form method="post" (ngSubmit)="addFriend()" class="row g-3 needs-validation" #friendsForm="ngForm" novalidate>
     <div class="col-md-4">
       <label for="validationCustom01" class="form-label">First name</label>
@@ -68,17 +68,4 @@
       <button type="submit" class="btn btn-primary" [disabled]="friendsForm.invalid">Add Friend</button>
     </div>
   </form>
-</section>
-
-<section class="mt-5 d-flex justify-content-center" *ngFor="let friend of allFriends">
-  <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title">{{friend.firstName | titlecase}} {{friend.lastName | titlecase}}</h5>
-    </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">Email: {{friend.email }}</li>
-      <li class="list-group-item">Phone: {{friend.phone}}</li>
-      <li class="list-group-item">Language interested: {{friend.language}}</li>
-    </ul>
-  </div>
 </section>

@@ -1,0 +1,18 @@
+<section class="container">
+  <h1>Your all friends</h1>
+  <div class="row">
+    <div class="col-sm-4" *ngFor="let friend of allFriends">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{friend.firstName | titlecase}} {{friend.lastName | titlecase}}</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Email: {{friend.email }}</li>
+          <li class="list-group-item">Phone: {{friend.phone}}</li>
+          <li class="list-group-item">Language interested: {{friend.language}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+

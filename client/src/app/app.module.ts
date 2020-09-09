@@ -8,13 +8,15 @@ import {FooterComponent} from './footer/footer.component';
 import {FriendFormComponent} from './friend-form/friend-form.component';
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { FriendDetailsComponent } from './friend-details/friend-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    FriendFormComponent
+    FriendFormComponent,
+    FriendDetailsComponent
   ],
   imports: [
     BrowserModule,
